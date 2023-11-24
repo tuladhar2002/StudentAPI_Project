@@ -1,0 +1,40 @@
+version: '3.8'
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  demo-app:
+    image: docker.io/library/studentapi
+    depends_on:
+      - "app_db"
+    container_name: studentapi-services
+    ports: 
+      - "8088:80"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ConnectionStrings__StudentAPIDb=User ID=postgres;Password=postgres;Server=app_db;Port=5432;Database=StudentAPI_DB; IntegratedSecurity=true;Pooling=true;
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - dev
+
+  app_db:
+    image: postgres:latest
+    container_name: app_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=StudentAPI_DB
+    ports:
+      - "5433:5432"
+    restart: always
+    volumes:
+      - app_data:/var/lib/postgresql/data2
+    networks:
+      - dev
+
+volumes:
+  app_data:
