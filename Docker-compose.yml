@@ -35,6 +35,22 @@ services:
       - app_data:/var/lib/postgresql/data2
     networks:
       - dev
+  
+  auth_db:
+    image: postgres:latest
+    container_name: auth_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=StudentAPI_AuthDB
+    ports:
+      - "5434:5432"
+    restart: always
+    volumes:
+      - app_data:/var/lib/postgresql/data2
+    networks:
+      - dev
 
 volumes:
   app_data:
+  auth_data:

@@ -17,7 +17,11 @@ builder.Services.AddSwaggerGen();
 
 //DI for POSTGRES
 builder.Services.AddDbContext<StudentAPIDbContext>(options=>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("StudentAPIDb"))
+    options.UseNpgsql(builder.Configuration.GetConnectionString("StudentAPIDb")) //app_db
+);
+
+builder.Services.AddDbContext<StudentAPIAuthDbContext>(options=>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("StudentAuthConnectionString"))
 );
 
 //Repo Pattern
