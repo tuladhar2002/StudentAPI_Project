@@ -39,7 +39,7 @@ namespace StudentAPI.Repository
                 configuration["Jwt:Issuer"],
                 configuration["Jwt:Audience"],
                 claims,
-                expires: DateTime.Now.AddMinutes(15), //after 15 min token expires
+                expires: DateTime.Now.AddMinutes(30), //after 30 min token expires
                 signingCredentials: credentials
             );
 
