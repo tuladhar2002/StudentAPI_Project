@@ -5,6 +5,7 @@ using StudentAPI.Mapping;
 using StudentAPI.Repository;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,11 +25,34 @@ builder.Services.AddDbContext<StudentAPIAuthDbContext>(options=>
     options.UseNpgsql(builder.Configuration.GetConnectionString("StudentAuthConnectionString"))
 );
 
-//Repo Pattern
+//DI Student Repositories
 builder.Services.AddScoped<IStudentRepositories, PGSQLStudentsRepository>();
+
+//DI newly created Token Repositories
+builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
 //AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
+
+//Inject Identity
+builder.Services.AddIdentityCore<IdentityUser>()
+    .AddRoles<IdentityRole>()
+    .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("StudentAPI")
+    .AddEntityFrameworkStores<StudentAPIAuthDbContext>()
+    .AddDefaultTokenProviders();
+
+//setup Identity options to configure password settings
+builder.Services.Configure<IdentityOptions>(Options=>
+    {
+        Options.Password.RequireDigit = true;
+        Options.Password.RequireLowercase = false;
+        Options.Password.RequireNonAlphanumeric = false;
+        Options.Password.RequireUppercase = true;
+        Options.Password.RequiredLength = 6;
+        Options.Password.RequiredUniqueChars = 1;
+    }
+);
+
 
 //Add Auth into Service collection
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
