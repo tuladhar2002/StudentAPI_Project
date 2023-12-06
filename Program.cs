@@ -7,14 +7,28 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using Microsoft.AspNetCore.Diagnostics;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//Adding Serilog for logs and Global Exception handling
+var logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/StudentAPI_Log.txt", rollingInterval: RollingInterval.Minute) //create logs per day
+    .MinimumLevel.Warning()
+    .CreateLogger();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddEndpointsApiExplorer(); 
 
 //apply auth into Swagger
 builder.Services.AddSwaggerGen(options =>
@@ -104,6 +118,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     }
 );
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -113,11 +128,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+//Inject Middleware for global exception handling
+app.UseMiddleware<ExceptionHandlerMiddleware>();
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+
 
 app.MapControllers();
 
