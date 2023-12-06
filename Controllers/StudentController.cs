@@ -47,7 +47,7 @@ namespace StudentAPI.Controllers
             var allStudents = await studentRepositories.GetAllStudentsAsync(filterOn, filterQuery, sortBy, isAscending);
             
             //smth wrong happend
-            throw new Exception("This is a new Exception");
+            // throw new Exception("This is a new Exception");
 
             return Ok(mapper.Map<List<StudentDto>>(allStudents));
         }

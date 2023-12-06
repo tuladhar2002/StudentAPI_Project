@@ -130,7 +130,7 @@ if (app.Environment.IsDevelopment())
 
 
 //Inject Middleware for global exception handling
-app.UseMiddleware<ExceptionHandlerMiddleware>();
+app.UseMiddleware<StudentAPI.Middleware.ExceptionHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 
