@@ -140,5 +140,31 @@ namespace StudentAPI.Controllers
             return Ok("Provided StudentId Succesfully Deleted");
         }
 
+       /// <summary>
+        /// Enable/disable a student
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>????????????????????????????????????????????????????????????????????????????????
+        /// <parameter id="...">Id of the student</parameter>
+        /// <response code="200">Student enabled</response>
+        /// <response code="404">Failed to Enable. Provided StudentId does not exist</response>
+        /// <response code="500">Something went wrong... we are looking into it!</response>
+        //EnableStudent{http://localhost:5288/api/student/{id}}
+        [HttpPatch]
+        [Route("{id:Guid}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> EnableDisableStudent([FromRoute]Guid id, [FromQuery]bool enableStudent)
+        {
+            string entity = await studentRepositories.EnableStudent(id, enableStudent);
+
+            if(entity == null)
+            {
+                return NotFound("Failed to Disable. Provided StudentId:"+id+" does not exist");
+            }
+
+            return Ok(entity);
+        }
+        
+
+        
     }
 }

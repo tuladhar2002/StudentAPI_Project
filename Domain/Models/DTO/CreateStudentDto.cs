@@ -20,6 +20,8 @@ namespace StudentAPI.Domain.Models.DTO
         [MinLength(1, ErrorMessage ="Nationality has to be a minimum of 1 Character")]
         public required string Nationality { get; set; }
 
+        public bool IsEnabled { get; set; }
+
         public Guid? ClassId { get; set; }
         public Guid? RankingId { get; set; }
     }

@@ -16,9 +16,11 @@ namespace StudentAPI.Domain.Models
         public Guid? ClassId { get; set; }
         public Guid? RankingId { get; set; }
 
+        public bool IsEnabled { get; set; }
+
         //Nav Prop
         public Class Class { get; set; }
         public Ranking Ranking { get; set; }
- 
+
     }
 }

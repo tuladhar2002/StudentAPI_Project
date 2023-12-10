@@ -14,5 +14,7 @@ namespace StudentAPI.Repository
         Task<Student?> CreateStudentAsync(Student student); //CreateStudent
         Task<Student?> UpdateExistingStudentAsync(Guid id, Student student); //UpdateExistingStudent
         Task<Student?> DeleteStudentAsync(Guid id);
+        Task<string?> EnableStudent(Guid id, bool enableStudent); //Enable
+
     }
 }

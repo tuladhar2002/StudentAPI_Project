@@ -19,6 +19,8 @@ namespace StudentAPI.Domain.Models.DTO
    
         public required string Nationality { get; set; }
 
+        public bool IsEnabled { get; set; }
+
         public Guid? ClassId { get; set; }
         public Guid? RankingId { get; set; }
     }
