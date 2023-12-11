@@ -21,11 +21,13 @@ namespace StudentAPI.Controllers
     {
         private readonly IStudentRepositories studentRepositories;
         private readonly IMapper mapper;
+        private readonly ILogger<StudentController> logger;
 
-        public StudentController(IStudentRepositories studentRepositories, IMapper mapper)
+        public StudentController(IStudentRepositories studentRepositories, IMapper mapper, ILogger<StudentController> logger)
         {
             this.studentRepositories = studentRepositories;
             this.mapper = mapper;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -38,11 +40,14 @@ namespace StudentAPI.Controllers
         /// <response code="500">Something went wrong... we are looking into it!</response>
         //GetAll{http://localhost:5288/api/student?filterOn=Name&filterQuery=Name}
         [HttpGet]
-        [Authorize(Roles = "Admin, Student")]
+        // [Authorize(Roles = "Admin, Student")]
         public async Task<IActionResult> GetAllStudents([FromQuery] string? filterOn,
         [FromQuery] string? filterQuery, [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
             var allStudents = await studentRepositories.GetAllStudentsAsync(filterOn, filterQuery, sortBy, isAscending);
+            
+            //smth wrong happend
+            // throw new Exception("This is a new Exception");
 
             return Ok(mapper.Map<List<StudentDto>>(allStudents));
         }
