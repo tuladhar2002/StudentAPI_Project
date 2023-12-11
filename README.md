@@ -1,6 +1,6 @@
-#Student WEB API#
+#Student WEB API
 
-##Environment setup##
+##Environment setup
 
 1. Make sure to install .NET 7 SDK (https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 2. Install dotnet tools if not installed yet:
@@ -13,7 +13,7 @@
 3. Make sure Docker is installed & running in background (Which hosts our API service, API Database and Auth Database for our service)
    > It's okay for no containers to be running right now within docker
 
-##Build Application##
+##Build Application
 
 1. Clone the github repo into local VS code
 2. Build the application to check for any errors:
@@ -41,16 +41,16 @@
 
 5. Run Application once containers are running
 
-#Setup For API services#
+#Setup For API services
 
 Once the application can build succesfully and application is running, we can access it through chrome at port 5288:(http://localhost:5288/swagger/index.html).
 For testing in POSTMAN, simply copy the JSON StudentAPI collection file in the root directory of this project and paste it in postman.
 
-##Register and Login##
+##Register and Login
 
 The Student API web service can handle client Login and Registry. The service is built around ASP.NET Core JWT Authentication flow[Know More](https://dev.to/fabriziobagala/jwt-authentication-in-aspnet-13ma), hence a client would need to Register and login in order to get authorized for all the Web API functionalities.
 
-###Register###
+###Register
 
 For registering client needs to put in 3 informations:
 
@@ -60,7 +60,7 @@ For registering client needs to put in 3 informations:
 
 After Executing, Should get a 200 Response back with comment Succesfully Registerd.
 
-###Login###
+###Login
 
 Once registered, User can Login to get the JWT token.
 
@@ -80,13 +80,13 @@ Then save it.
 Now we should be set for sending requests within Swagger or Postman, whichever preffered.
 >Note: The token expires in 30 mins, hence will need to login again to get new JWT token
 
-##Student API Functionalities##
+##Student API Functionalities
 
 We can apply basic CRUD functionalities now that we are logged in within the Student API service, however it depends on the Role assigned:
    Admin -> Should be able to work with all the CRUD functionalities as is authorized.
    Student -> Can only implement GetAllStudents and GetStudentById functionalities as they are not authorized for all the tasks.
 
-###GetAllStudents###
+###GetAllStudents
 Route to get all Students: http://localhost:5288/api/Student
 
 Route to get or filter Student by Name: http://localhost:5288/api/Student?filterOn=Name&filterQuery=Name 
@@ -95,7 +95,7 @@ Route to get or filter Student by Name: http://localhost:5288/api/Student?filter
 Route to sort all students by Name in Ascending or Descending: http://localhost:5288/api/Student?sortBy=Name&isAscending=true 
 >(put "true" or "false" in isAscending=true to sort accordingly)
 
-###CreateStudent###
+###CreateStudent
 
 Route: POST request http://localhost:5288/api/Student
 
@@ -128,26 +128,26 @@ Should respond with 201 status code with the created object Student.
 > If you put in invalid or unknown Guid, ModelValidation should handle it and explain no such Id exists.
 
 
-###GetStudentById###
+###GetStudentById
 
 Route: Get Request http://localhost:5288/api/Student/{ID} 
 >Replace {ID} with actual Student ID you want to get
 
 
-###GetStudentById###
+###GetStudentById
 
 Route: PUT request http://localhost:5288/api/Student/{ID} 
 >Replace {ID} with actual Student ID you want to update
 
 pass in body in raw JSON format similar to CreateStudent 
 
-###DeleteStudent###
+###DeleteStudent
 
 Route: Delete request http://localhost:5288/api/Student/{ID}
 >Replace {ID} with actual Student ID you want to delete
 
 
-###EnableDisableStudent###
+###EnableDisableStudent
 
 Route: PATCH request http://localhost:5288/api/Student/{ID}?enableStudent=true
 >Replace {ID} with actual Student ID you want to enable or disable
