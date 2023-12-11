@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using StudentAPI.Data;
@@ -11,9 +12,11 @@ using StudentAPI.Data;
 namespace StudentAPI.Migrations
 {
     [DbContext(typeof(StudentAPIDbContext))]
-    partial class StudentAPIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231210223840_added isEnabled entity")]
+    partial class addedisEnabledentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

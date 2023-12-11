@@ -61,7 +61,7 @@ namespace StudentAPI.Repository
         //Get Student By Id
         public async Task<Student?> GetAllStudentByIdAsync(Guid id)
         {
-            var student = await dbContext.Students.Include("Class").Include("Ranking").FirstOrDefaultAsync(x => x.Id == id);
+            var student = await dbContext.Students.Include("Class").Include("Ranking").FirstOrDefaultAsync(x => x.Id == id && x.IsEnabled == true);
             if (student == null)
             {
                 return null;
@@ -102,6 +102,8 @@ namespace StudentAPI.Repository
                 }
             }
 
+            students = students.Where(x => x.IsEnabled == true);
+
             return await students.ToListAsync();
         }
 
@@ -122,6 +124,32 @@ namespace StudentAPI.Repository
             await dbContext.SaveChangesAsync();
 
             return studentDomainModel;
+
+        }
+
+        //enable/desable Student
+        public async Task<string?> EnableStudent(Guid id, bool enableStudent)
+        {
+            var studentDomainModel = await dbContext.Students.FirstOrDefaultAsync(x => x.Id == id);
+            if (studentDomainModel == null) {
+                return null;
+            }
+            if (enableStudent == true && studentDomainModel.IsEnabled == true){
+                return "Already enabled";
+            }
+            if (enableStudent == false && studentDomainModel.IsEnabled == false){
+                return "Already disabled";
+            }
+            if (enableStudent == true) {
+                studentDomainModel.IsEnabled = true;
+                await dbContext.SaveChangesAsync();
+                return "The Student with ID: "+id+" is enabled";
+            }
+            else {
+                studentDomainModel.IsEnabled = false;
+                await dbContext.SaveChangesAsync();
+                return "The Student with ID: "+id+" is disabled";
+            }
 
         }
     }
