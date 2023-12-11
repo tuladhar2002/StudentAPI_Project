@@ -46,7 +46,7 @@
 Once the application can build succesfully and application is running, we can access it through chrome at port 5288:(http://localhost:5288/swagger/index.html).
 For testing in POSTMAN, simply copy the JSON StudentAPI collection file in the root directory of this project and paste it in postman.
 
-##Register and Login
+## Register and Login
 
 The Student API web service can handle client Login and Registry. The service is built around ASP.NET Core JWT Authentication flow[Know More](https://dev.to/fabriziobagala/jwt-authentication-in-aspnet-13ma), hence a client would need to Register and login in order to get authorized for all the Web API functionalities.
 
