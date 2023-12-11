@@ -105,11 +105,11 @@ Route: POST request http://localhost:5288/api/Student
 
 Initially there is nothing in the database so we can start storing in Students.
 
-name -> name of Student
-email -> valid email address
-nationality -> any country
-isEnabled -> true or false (Based on whether you want to enable this student or disable)
-ClassId -> Choose a Guid Class Id based on the table below
+name -> name of Student <br>
+email -> valid email address<br>
+nationality -> any country<br>
+isEnabled -> true or false (Based on whether you want to enable this student or disable)<br>
+ClassId -> Choose a Guid Class Id based on the table below<br>
 
 | Id                                   | Name                               |
 | ------------------------------------ | ---------------------------------- |
