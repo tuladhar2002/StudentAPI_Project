@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "68f82fbe-71a2-42a6-a262-71bc2f069e5a",
+		"name": "StudentAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29901909",
+		"_collection_link": "https://planetary-escape-522117.postman.co/workspace/StudentAPI~af3d5617-36dd-4c6b-9931-66668c9ad9a3/collection/29901909-68f82fbe-71a2-42a6-a262-71bc2f069e5a?action=share&source=collection_link&creator=29901909"
+	},
+	"item": [
+		{
+			"name": "StudentController",
+			"item": [
+				{
+					"name": "GetAllStudents",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "http://localhost:5288/api/student"
+					},
+					"response": []
+				},
+				{
+					"name": "PostStudent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"student1\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/student"
+					},
+					"response": []
+				},
+				{
+					"name": "PutStudent",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"student1Neu\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591"
+					},
+					"response": []
+				},
+				{
+					"name": "GetStudentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5288/api/student/6566fefc-691c-481a-8b81-e52a8ab33aec"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AuthController",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"luca@example.com\",\r\n  \"password\": \"Test123\",\r\n  \"roles\": [\r\n    \"Admin\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/Auth/Register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"luca@example.com\",\r\n  \"password\": \"Test123\",\r\n  \"roles\": [\r\n    \"Admin\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/Auth/Login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Errors",
+			"item": [
+				{
+					"name": "PostStudentMissingName",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"student1\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/student"
+					},
+					"response": []
+				},
+				{
+					"name": "PostStudentInvalidEmail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"student1\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/student"
+					},
+					"response": []
+				},
+				{
+					"name": "PostStudentInvalidClassId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"student1\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/student"
+					},
+					"response": []
+				},
+				{
+					"name": "PostStudentInvalidRankingId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"student1\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/student"
+					},
+					"response": []
+				},
+				{
+					"name": "PostStudentInvalidNationality",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"student1\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/student"
+					},
+					"response": []
+				},
+				{
+					"name": "PutStudentWrongId",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"student1Neu\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMTExODQsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.UvT1muIPIKHW5iQAqNGLQsv_57j_hB1XOYM69qCxYj8",
+			"key": "Authorization"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
