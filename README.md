@@ -81,7 +81,7 @@ Now we should be set for sending requests within Swagger or Postman, whichever p
 
 > Note: The token expires in 30 mins, hence will need to login again to get new JWT token
 
-##Student API Functionalities
+## Student API Functionalities
 
 We can apply basic CRUD functionalities now that we are logged in within the Student API service, however it depends on the Role assigned:
 Admin -> Should be able to work with all the CRUD functionalities as is authorized.

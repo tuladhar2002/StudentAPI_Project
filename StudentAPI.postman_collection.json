@@ -1,96 +1,209 @@
 {
 	"info": {
-		"_postman_id": "68f82fbe-71a2-42a6-a262-71bc2f069e5a",
+		"_postman_id": "84474e0b-5345-4f17-a292-9d75fa93b7e4",
 		"name": "StudentAPI",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "29901909",
-		"_collection_link": "https://planetary-escape-522117.postman.co/workspace/StudentAPI~af3d5617-36dd-4c6b-9931-66668c9ad9a3/collection/29901909-68f82fbe-71a2-42a6-a262-71bc2f069e5a?action=share&source=collection_link&creator=29901909"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28701985"
 	},
 	"item": [
 		{
 			"name": "StudentController",
 			"item": [
 				{
-					"name": "GetAllStudents",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": "http://localhost:5288/api/student"
-					},
-					"response": []
-				},
-				{
-					"name": "PostStudent",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"student1\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "CRUD requests",
+					"item": [
+						{
+							"name": "GetAllStudents",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5288/api/student",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5288",
+									"path": [
+										"api",
+										"student"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": "http://localhost:5288/api/student"
-					},
-					"response": []
-				},
-				{
-					"name": "PutStudent",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"student1Neu\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "PostStudent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"student1\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"Nationality\",\r\n  \"isEnabled\": true,\r\n  \"classId\": \"5c47bab3-293b-4b64-8860-bdeb1516ed43\",\r\n  \"rankingId\": \"b9de3c6d-55e8-4857-9e8e-87a8c35f5ae0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5288/api/student",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5288",
+									"path": [
+										"api",
+										"student"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591"
-					},
-					"response": []
+						{
+							"name": "PutStudent",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDEzMDM3ODUsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.JUuONoBgX1x0ioQQY6xKWmVwbsZ25plBIHofMGQlXi0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"student1Neu\",\r\n  \"email\": \"student1@example.com\",\r\n  \"nationality\": \"german\",\r\n  \"classId\": \"0d06acb7-5ad4-458c-b26e-a3b390994335\",\r\n  \"rankingId\": \"044677d4-ec73-4c97-a007-86530e9c0769\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5288",
+									"path": [
+										"api",
+										"student",
+										"21161835-c3c6-48e1-9a22-d2a7088e4591"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetStudentById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5288",
+									"path": [
+										"api",
+										"student",
+										"21161835-c3c6-48e1-9a22-d2a7088e4591"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteStudent",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5288/api/student/6566fefc-691c-481a-8b81-e52a8ab33aec",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5288",
+									"path": [
+										"api",
+										"student",
+										"6566fefc-691c-481a-8b81-e52a8ab33aec"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetStudent_ByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5288/api/Student?filterOn=Name&filterQuery={{Name}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5288",
+									"path": [
+										"api",
+										"Student"
+									],
+									"query": [
+										{
+											"key": "filterOn",
+											"value": "Name"
+										},
+										{
+											"key": "filterQuery",
+											"value": "{{Name}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetStudent_Sort",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
 				},
 				{
-					"name": "GetStudentById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591"
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteStudent",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "http://localhost:5288/api/student/6566fefc-691c-481a-8b81-e52a8ab33aec"
-					},
-					"response": []
+					"name": "Extra Functionality",
+					"item": [
+						{
+							"name": "EnableDIsableStudent",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -111,7 +224,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:5288/api/Auth/Register"
+						"url": {
+							"raw": "http://localhost:5288/api/Auth/Register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5288",
+							"path": [
+								"api",
+								"Auth",
+								"Register"
+							]
+						}
 					},
 					"response": []
 				},
@@ -122,14 +247,26 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"luca@example.com\",\r\n  \"password\": \"Test123\",\r\n  \"roles\": [\r\n    \"Admin\"\r\n  ]\r\n}",
+							"raw": "{\r\n  \"username\": \"luca@example.com\",\r\n  \"password\": \"Test123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:5288/api/Auth/Login"
+						"url": {
+							"raw": "http://localhost:5288/api/Auth/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5288",
+							"path": [
+								"api",
+								"Auth",
+								"Login"
+							]
+						}
 					},
 					"response": []
 				}
@@ -158,7 +295,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:5288/api/student"
+						"url": {
+							"raw": "http://localhost:5288/api/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5288",
+							"path": [
+								"api",
+								"student"
+							]
+						}
 					},
 					"response": []
 				},
@@ -182,7 +330,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:5288/api/student"
+						"url": {
+							"raw": "http://localhost:5288/api/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5288",
+							"path": [
+								"api",
+								"student"
+							]
+						}
 					},
 					"response": []
 				},
@@ -206,7 +365,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:5288/api/student"
+						"url": {
+							"raw": "http://localhost:5288/api/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5288",
+							"path": [
+								"api",
+								"student"
+							]
+						}
 					},
 					"response": []
 				},
@@ -230,7 +400,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:5288/api/student"
+						"url": {
+							"raw": "http://localhost:5288/api/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5288",
+							"path": [
+								"api",
+								"student"
+							]
+						}
 					},
 					"response": []
 				},
@@ -254,7 +435,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:5288/api/student"
+						"url": {
+							"raw": "http://localhost:5288/api/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5288",
+							"path": [
+								"api",
+								"student"
+							]
+						}
 					},
 					"response": []
 				},
@@ -278,7 +470,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591"
+						"url": {
+							"raw": "http://localhost:5288/api/student/21161835-c3c6-48e1-9a22-d2a7088e4591",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5288",
+							"path": [
+								"api",
+								"student",
+								"21161835-c3c6-48e1-9a22-d2a7088e4591"
+							]
+						}
 					},
 					"response": []
 				}
@@ -287,10 +491,18 @@
 	],
 	"auth": {
 		"type": "apikey",
-		"apikey": {
-			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhMUBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAyMzQxMjIzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1Mjg4LyJ9.p2KXgkMkX0vE7lcWgtC_RjbGkTBmORtK-DxLYpWmxeQ",
-			"key": "Authorization"
-		}
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWNhQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3MDI1MTU2MzgsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4OC8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyODgvIn0.xHmmoAK1NASq4R82hTC1QeBVVBqiXiD-lLKBeG2Y4fw",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
 	},
 	"event": [
 		{
@@ -310,6 +522,18 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Name",
+			"value": "student",
+			"type": "string"
+		},
+		{
+			"key": "StudentId",
+			"value": "374c4ac5-3f3b-48e3-a5d0-c9fd4590de48",
+			"type": "string"
 		}
 	]
 }
