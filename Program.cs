@@ -63,6 +63,17 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+// Add CORS services
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
 //DI for POSTGRES
 builder.Services.AddDbContext<StudentAPIDbContext>(options=>
     options.UseNpgsql(builder.Configuration.GetConnectionString("StudentAPIDb")) //app_db
@@ -128,6 +139,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors();
 
 //Inject Middleware for global exception handling
 app.UseMiddleware<StudentAPI.Middleware.ExceptionHandlerMiddleware>();
