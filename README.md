@@ -41,6 +41,14 @@
 
 5. Run Application once containers are running
 
+   ```
+   dotnet run
+
+   ```
+   >might look like terminal is stuck but the build is completed
+
+   Go to port: http://localhost:5288/swagger/index.html
+
 # Setup For API services
 
 Once the application can build succesfully and application is running, we can access it through chrome at port 5288:(http://localhost:5288/swagger/index.html).
